@@ -15,7 +15,18 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('department_id');
             $table->string('user_id');
-            $table->string('logo_marca')->nullable();
+            $table->string('logo_marca', 200)->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('horario', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->string('empreendedor_id');
+            $table->string('user_id')->nullable();
+            $table->string('data_atendimento');
+            $table->string('hora_atendimento');
+            $table->string('active');
+
             $table->timestamps();
         });
     }
