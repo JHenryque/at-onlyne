@@ -6,14 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class layout.LayoutAuth extends Component
+class LayoutGuest extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public string $title;
+    public function __construct($title)
     {
-        //
+        $this->title = $title;
     }
 
     /**
@@ -21,6 +22,6 @@ class layout.LayoutAuth extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.layout.-layout-auth');
+        return view('components.layout-guest');
     }
 }
