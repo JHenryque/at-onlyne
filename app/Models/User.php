@@ -51,7 +51,7 @@ class User extends Authenticatable
         return $this->belongsTo(Department::class);
     }
 
-    public function userAddres()
+    public function userAddress()
     {
         return $this->hasOne(UserAddress::class);
     }

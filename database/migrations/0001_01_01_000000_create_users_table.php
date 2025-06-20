@@ -27,8 +27,9 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('user_address', function (Blueprint $table) {
-            $table->foreignId('user_id')->nullable()->index();
+        Schema::create('user_addresses', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->foreignId('user_id');
             $table->string('address');
             $table->string('number');
             $table->string('bairro' );
@@ -44,7 +45,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('user_addresses');
         //Schema::dropIfExists('password_reset_tokens');
     }
 };

@@ -31,7 +31,7 @@ class AdminSeeder extends Seeder
 
         // --------- area endereço admin
 
-        DB::table('user_address')->insert([
+        DB::table('user_addresses')->insert([
             'user_id' => 1,
             'address' => 'Rua do Administrador',
             'number' => "133",
@@ -44,34 +44,34 @@ class AdminSeeder extends Seeder
 
         // ------------ area de departaments
 
-//        DB::table('departments')->insert([
-//            'name' => 'Administração',
-//            'created_at' => now(),
-//            'updated_at' => now(),
-//        ]);
-//
-//        DB::table('departments')->insert([
-//            'name' => 'Assistente',
-//            'created_at' => now(),
-//            'updated_at' => now(),
-//        ]);
-//
-//        DB::table('departments')->insert([
-//            'name' => 'Vendedor',
-//            'created_at' => now(),
-//            'updated_at' => now(),
-//        ]);
-//
-//        DB::table('departments')->insert([
-//            'name' => 'Empreendedor',
-//            'created_at' => now(),
-//            'updated_at' => now(),
-//        ]);
-//
-//        DB::table('departments')->insert([
-//            'name' => 'Cliente',
-//            'created_at' => now(),
-//            'updated_at' => now(),
-//        ]);
+        DB::table('departments')->insert([
+            'name' => 'Administração',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Assistente',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Vendedor',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Empreendedor',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Cliente',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }
