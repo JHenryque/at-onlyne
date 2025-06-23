@@ -29,6 +29,9 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
+        ],
+        [
+            'email.required'=> 'o campo email . obrigario',
         ])->validate();
 
         return User::create([

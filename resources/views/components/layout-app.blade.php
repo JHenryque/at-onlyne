@@ -19,7 +19,8 @@
 
 
 
-<div class="d-flex pt-2">
+    <x-user-bar />
+<div class="d-flex pt-2 ">
 
     {{ $slot }}
 </div>
