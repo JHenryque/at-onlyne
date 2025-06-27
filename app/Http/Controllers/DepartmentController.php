@@ -16,4 +16,18 @@ class DepartmentController extends Controller
         $departments = Department::all();
         return view('department.departments', compact('departments'));
     }
+
+    // funçao para newDepartament
+
+    // funçao para criar createDepatment
+
+    // função para editDepartment
+
+    // funçao para updateDepartment
+
+    // funçao para deleteDepartment
+
+    // funçao para deleteDepartmenteConfirm
+
+    // funçao para isDepartmentBlocked
 }
