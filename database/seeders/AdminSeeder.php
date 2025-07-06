@@ -63,7 +63,7 @@ class AdminSeeder extends Seeder
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Empreendedor',
+            'name' => 'EmpreendedoController',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
