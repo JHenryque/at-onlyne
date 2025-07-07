@@ -7,11 +7,13 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    // page inicio profile
     public function index(): View
     {
         return view('user.profile');
     }
 
+    // atualização da senha
     public function updatePassword(Request $request)
     {
         $request->validate([
@@ -40,6 +42,7 @@ class ProfileController extends Controller
          return redirect()->back()->with('success', 'Senha alterada com sucesso!');
     }
 
+    // atualização nome e email
     public function profileUserChangeData(Request $request)
     {
         // form validation

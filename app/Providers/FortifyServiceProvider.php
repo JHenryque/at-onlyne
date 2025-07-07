@@ -43,14 +43,17 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
+        // entrada da page do login ja com a validaçao
         Fortify::loginView(function () {
             return view('auth.login');
         });
 
+        // recuperar senha
         Fortify::requestPasswordResetLinkView(function () {
            return view('auth.forget-password');
         });
 
+        // alterar senha
         Fortify::resetPasswordView(function ($request) {
             return view('auth.reset-password', ['token' => $request->route('token') ]);
         });
