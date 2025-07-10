@@ -18,5 +18,12 @@ Route::middleware('auth')->group(function () {
     // departments
     Route::get('/department', [DepartmentController::class, 'index'])->name('departments');
 
+    // colaboradores
+
+
+    // empreendedor
+
+
+    // plano pagamento
 });
 
