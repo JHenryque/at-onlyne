@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ColaboratorsController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConfirmAccountController;
 
-
+Route::get('/confirm-account/{id}', [ConfirmAccountController::class, 'confirmAccount'])->name('confirm-account');
 
 Route::middleware('auth')->group(function () {
     // pifile
@@ -19,7 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/department', [DepartmentController::class, 'index'])->name('departments');
 
     // colaboradores
-
+    Route::get('/colaborators', [ColaboratorsController::class, 'index'])->name('colaborators');
+    Route::get('/colaborators/new-colaborator', [ColaboratorsController::class, 'newColaborator'])->name('colaborators.new-colaborator');
+    Route::post('colaborators/create', [ColaboratorsController::class, 'createColarator'])->name('colaborators.create');
 
     // empreendedor
 

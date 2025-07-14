@@ -4,8 +4,8 @@
 
         @can('admin')
             <a href="#" class=""><i class="fas fa-users me-3"></i>Colaborators</a>
-            <a href="#" class=""><i class="fas fa-user-gear me-3"></i>Colaborator VD</a>
-            <a href="#" class=""><i class="fas fa-industry me-3"></i>Departments</a>
+            <a href="{{ route('colaborators') }}" class=""><i class="fas fa-user-gear me-3"></i>Colaborator TD</a>
+            <a href="{{ route('departments') }}" class=""><i class="fas fa-industry me-3"></i>Departments</a>
 
         @endcan
         <hr>

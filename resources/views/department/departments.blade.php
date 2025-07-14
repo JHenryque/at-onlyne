@@ -1,4 +1,4 @@
-<x-layout-app pageTitle="Departments">
+<x-layout-app title="Departments">
     <div class="w-100 p-4">
 
         <h3>Departments</h3>
@@ -8,12 +8,12 @@
         @if($departments->count() === 0)
             <div class="text-center my-5">
                 <p>No departments found.</p>
-                <a href="{{ route('departments.new-department') }}" class="btn btn-primary">Create a new department</a>
+                <a href="#" class="btn btn-primary">Create a new department</a>
             </div>
         @else
 
             <div class="mb-3">
-                <a href="{{ route('departments.new-department') }}" class="btn btn-primary">Create a new department</a>
+                <a href="#" class="btn btn-primary">Create a new department</a>
             </div>
 
             <table class="table" id="table">
@@ -30,8 +30,8 @@
                                 @if(in_array($department->id, [1,2]))
                                     <i class="fa-solid fa-lock"></i>
                                 @else
-                                    <a href="{{ route('departments.edit-department', ['id'=> $department->id]) }}" class="btn btn-sm btn-outline-dark ms-3"><i class="fa-regular fa-pen-to-square me-2"></i>Edit</a>
-                                    <a href="{{ route('departments.delete-department', ['id'=> $department->id]) }}" class="btn btn-sm btn-outline-danger ms-3" ><i class="fa-regular fa-trash-can me-2"></i>Delete</a>
+                                    <a href="#" class="btn btn-sm btn-outline-dark ms-3"><i class="fa-regular fa-pen-to-square me-2"></i>Edit</a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger ms-3" ><i class="fa-regular fa-trash-can me-2"></i>Delete</a>
                                 @endif
                             </div>
                         </td>
