@@ -15,10 +15,10 @@ class ColaboratorsController extends Controller
     {
         Auth::user()->can('admin') ? : abort(403, 'You are not allowed to access this page');
 
-        $colaborators = User::where('role', 'assistente')->get();
+        $colaborators = User::where('role', '<>', 'admin')->get();
 
-        $departments = Department::where('role', '<>', 'admin')->get();
-        return view('colaborators.colaborators', ['colaborators' => $colaborators]);
+
+        return view('colaborators.colaborators', compact('colaborators'));
     }
 
     // caminha para view adiciona colaborador
@@ -26,7 +26,9 @@ class ColaboratorsController extends Controller
     {
         Auth::user()->can('admin') ? : abort(403, 'You are not allowed to access this page');
 
-        return view('colaborators.newColaborator');
+        $departments = Department::where('name', '<>', 'admin')->where('name', '<>', 'cliente')->get();
+
+        return view('colaborators.newColaborator', compact('departments'));
     }
 
     // criar colabordor
@@ -45,7 +47,7 @@ class ColaboratorsController extends Controller
         $user->email = $request->email;
         $user->role = 'rh';
         $user->department_id = $request->select_department;
-        $user->permissions = 'role';
+        $user->permissions = $user->department->name;
         $user->save();
 
         return redirect()->route('colaborators.colaborators').with('success', 'Colaborator created successfully');

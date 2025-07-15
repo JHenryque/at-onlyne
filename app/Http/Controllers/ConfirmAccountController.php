@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class ConfirmAccountController extends Controller
 {
-    //
+    public function confirmAccount($url)
+    {
+
+    }
 }
