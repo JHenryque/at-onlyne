@@ -45,31 +45,31 @@ class AdminSeeder extends Seeder
         // ------------ area de departaments
 
         DB::table('departments')->insert([
-            'name' => 'Administração',
+            'name' => 'admin',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Assistente',
+            'name' => 'assistente',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Vendedor',
+            'name' => 'vendedor',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'EmpreendedoController',
+            'name' => 'empreendedoController',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Cliente',
+            'name' => 'cliente',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

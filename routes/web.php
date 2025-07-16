@@ -7,9 +7,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConfirmAccountController;
 
-Route::get('/confirm-account/{id}', [ConfirmAccountController::class, 'confirmAccount'])->name('confirm-account');
 
 Route::middleware('auth')->group(function () {
+Route::get('/confirm-account/{id}', [ConfirmAccountController::class, 'confirmAccount'])->name('confirm-account');
     // pifile
     Route::redirect('/', 'home');
     Route::get('/', [AdminController::class, 'home'])->name('home');

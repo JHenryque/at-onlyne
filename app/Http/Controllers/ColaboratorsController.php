@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ConfirmAccountEmail;
 use App\Models\Department;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class ColaboratorsController extends Controller
@@ -41,14 +44,23 @@ class ColaboratorsController extends Controller
             'select_department'=>'required|exists:departments,id',
         ]);
 
+        // create user confirmation token
+        $token = Str::random(60);
+
         // create new rh use
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->role = 'rh';
-        $user->department_id = $request->select_department;
+        $user->confirmation_token = $token;
+        $user->departments_id = $request->select_department;
+        // Erro Tentativa de ler a propriedade "nome" em nulo
         $user->permissions = $user->department->name;
+        $user->role = $user->permissions;
         $user->save();
+
+
+        // send email to user
+        Mail::to($user->email)->send(new ConfirmAccountEmail(route('confirm-account', $token)));
 
         return redirect()->route('colaborators.colaborators').with('success', 'Colaborator created successfully');
     }
