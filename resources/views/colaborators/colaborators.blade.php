@@ -23,8 +23,6 @@
                 <th>Active</th>
                 <th>Department</th>
                 <th>Role</th>
-                <th>Admission date</th>
-                <th>Salary</th>
                 <th></th>
                 </thead>
                 <tbody>
@@ -41,8 +39,6 @@
                         </td>
                         <td>{{ $colaborator->department->name ?? " - " }}</td>
                         <td>{{ $colaborator->role }}</td>
-                        <td>{{ $colaborator->detail->admission_date }}</td>
-                        <td>{{ $colaborator->detail->salary }}</td>
 
                         <td>
                             <div class="d-flex gap-3 justify-content-end">

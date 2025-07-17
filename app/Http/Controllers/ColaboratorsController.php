@@ -52,8 +52,8 @@ class ColaboratorsController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->confirmation_token = $token;
-        $user->departments_id = $request->select_department;
-        // Erro Tentativa de ler a propriedade "nome" em nulo
+        $user->department_id = $request->select_department;
+        // resolvido
         $user->permissions = $user->department->name;
         $user->role = $user->permissions;
         $user->save();
@@ -62,6 +62,6 @@ class ColaboratorsController extends Controller
         // send email to user
         Mail::to($user->email)->send(new ConfirmAccountEmail(route('confirm-account', $token)));
 
-        return redirect()->route('colaborators.colaborators').with('success', 'Colaborator created successfully');
+        return redirect()->route('colaborators.colaborators')->with('success', 'Colaborador cadastrado com sucesso!');
     }
 }
