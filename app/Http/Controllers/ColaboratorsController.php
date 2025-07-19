@@ -62,6 +62,6 @@ class ColaboratorsController extends Controller
         // send email to user
         Mail::to($user->email)->send(new ConfirmAccountEmail(route('confirm-account', $token)));
 
-        return redirect()->route('colaborators.colaborators')->with('success', 'Colaborador cadastrado com sucesso!');
+        return redirect()->route('colaborators')->with('success', 'Colaborador cadastrado com sucesso!');
     }
 }

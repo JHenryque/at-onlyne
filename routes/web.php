@@ -9,7 +9,10 @@ use App\Http\Controllers\ConfirmAccountController;
 
 
 Route::middleware('auth')->group(function () {
+    // routa para email
 Route::get('/confirm-account/{id}', [ConfirmAccountController::class, 'confirmAccount'])->name('confirm-account');
+    Route::post('/confirm-account', [ConfirmAccountController::class, 'confirmAccountSubmit'])->name('confirm-account-submit');
+
     // pifile
     Route::redirect('/', 'home');
     Route::get('/', [AdminController::class, 'home'])->name('home');

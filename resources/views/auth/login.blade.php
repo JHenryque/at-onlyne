@@ -1,7 +1,7 @@
 <x-layout-guest title="Login">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-6 mb-5 align-self-center">
+    <div class="container mt-5 ">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-6">
 
 
                 <!-- login form -->

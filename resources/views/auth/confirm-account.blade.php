@@ -11,7 +11,7 @@
                 <!-- login form -->
                 <div class="card p-5">
 
-                    <form action="#" method="post">
+                    <form action="{{ route('confirm-account-submit') }}" method="post">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $user->confirmation_token }}">

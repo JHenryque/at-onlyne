@@ -18,4 +18,23 @@ class ConfirmAccountController extends Controller
 
         return view('auth.confirm-account', compact('user'));
     }
+
+    public function confirmAccountSubmit(Request $request)
+    {
+        // validadçao formulario
+        $request->validate([
+            'token' => 'required|string|size:60',
+            'password' => 'required|min:8|confirmed|max:20|regex:/^(?=.*[a-z])(?=.*\d).+$/',
+            'password_confirmation' => 'required',
+        ]);
+
+        $user = User::where('confirmation_token', $request->token)->first();
+        $user->password = bcrypt($request->password);
+        $user->confirmation_token = null;
+        $user->email_verified_at = now();
+        $user->save();
+
+        return redirect()->route('home')->with('success', 'Your password has been confirmed!');
+
+    }
 }
